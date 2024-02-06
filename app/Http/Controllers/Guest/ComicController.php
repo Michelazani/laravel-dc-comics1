@@ -13,7 +13,17 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $comics=Comic::all();
+        dd($comics);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $comic=Comic::findOrFail($id);
+        dd($comic);
     }
 
     /**
@@ -32,13 +42,6 @@ class ComicController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
