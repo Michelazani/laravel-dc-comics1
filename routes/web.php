@@ -17,9 +17,9 @@ use App\Http\Controllers\Guest\ComicController as GuestComicController;
 //     return view('pages.home');
 // });
 
-Route::get('/', function () {
+Route::get('/comics', function () {
     $comics = config('db.comics');
-    return view('pages.comics', [ 'comics' => $comics] );
+    return view('comics.index', compact('comics') );
 });
 
 Route::get('/comics', [GuestComicController::class, 'index']) -> name('comics.index');
