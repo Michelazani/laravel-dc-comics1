@@ -2,7 +2,7 @@
 
 @section('main-content')
 <main>
-    <section class="d-flex flex-column justify-content-center align-items-center">
+    <section id="comics " class="d-flex flex-column justify-content-center align-items-center">
         <button class=" upper-button"> current series </button>
         <div class="comics d-flex flex-wrap justify-content-space-evenly align-items-stretch">
             @foreach ($comics as $comic)
