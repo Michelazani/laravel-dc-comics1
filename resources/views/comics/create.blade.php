@@ -3,8 +3,9 @@
 @section('main-content')
 <section  class="form-container container">
     <div class="row justify-content-center">
-        <h3>Add a new comic</h3>
-        <form action="" method="get">
+        <h3>Create a new comic</h3>
+        <form action="{{ route('comics.store') }}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Name of the comic book: </label>
                 <input type="text" name="title" id="title" class="form-control">
@@ -25,6 +26,7 @@
                 <label for="series" class="form-label">Series: </label>
                 <input type="text" name="series" id="series" class="form-control">
             </div>
+            <button type="submit" class="btn btn-primary">Add a new comic</button>
         </form>
     </div>
 
