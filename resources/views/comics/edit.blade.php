@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('main-content')
-<section  class="form-container container">
+<section  class="form-container container w-50 mx-auto">
     <div class="row justify-content-center">
-        <h3>Edit a comic</h3>
+        <h3 class="m-3">Edit a comic</h3>
         <form action="{{ route('comics.update', $comic->id ) }}" method="POST">
             @csrf
             {{-- aggiunta metodo per update --}}
             @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Name of the comic book: </label>
-                <input type="text" name="title" id="title" class="form-control" value="{{ $comic->title }}">
+                <input type="text" name="title" id="title" class="form-control" value="{{ old( 'title' ,$comic->title) }}">
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">Image url:</label>
@@ -28,7 +28,7 @@
                 <label for="series" class="form-label">Series: </label>
                 <input type="text" name="series" id="series" class="form-control" value="{{ $comic->series  }}">
             </div>
-            <button type="submit" class="btn btn-primary">Edit the comic you chose</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-4">Edit the comic you chose</button>
         </form>
     </div>
 

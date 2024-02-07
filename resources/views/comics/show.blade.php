@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('main-content')
-<article class="card w-50 text-center mx-auto p-4 ">
+<article class="card w-25 text-center mx-auto p-4  m-4">
     <h1>
         {{ $comic->title }}
         </h1>
         <div class="card-image">
-            <img class="w-50" src="{{  $comic->thumb }}" alt="{{ $comic->title }}'s img">
+            <img class="w-50" src="{{  $comic->thumb }}" alt="img">
         </div>
         <p>
             Description:{{ $comic->description }}

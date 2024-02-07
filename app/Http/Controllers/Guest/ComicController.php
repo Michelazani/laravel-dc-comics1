@@ -39,6 +39,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // prima metto il name del campo da applicare => regole da rispettare
+       /* $request->validate([
+            'title' => ['required', 'unique:pastas', 'min:4', 'max:40'],
+            'price' => ['required', 'min:4', 'max:20'],
+        ], [
+            'titolo.required' => 'You must have a title'
+        ]);
+        */
+        
         $newComicData = $request->all();
         /*per vedere quello che ho scritto nel form
         dd($newComicData['title']);
@@ -66,7 +75,7 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    
+
     // prima creo fillable in models e poi cambio string con Model e $id con $variabile
     public function update(Request $request, Comic $comic)
     {
