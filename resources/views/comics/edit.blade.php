@@ -6,7 +6,8 @@
         <h3>Edit a comic</h3>
         <form action="{{ route('comics.update', $comic->id ) }}" method="POST">
             @csrf
-            {{-- @method('PUT') --}}
+            {{-- aggiunta metodo per update --}}
+            @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Name of the comic book: </label>
                 <input type="text" name="title" id="title" class="form-control" value="{{ $comic->title }}">
@@ -17,7 +18,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description of the comic book:</label>
-                <input type="text" name="description" id="description" class="form-control" value="{{ $comic->description }}">
+                <textarea type="text" name="description" id="description" class="form-control" rows=6> {{ $comic->description }} </textarea>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price: </label>

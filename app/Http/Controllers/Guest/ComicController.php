@@ -66,9 +66,15 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    
+    // prima creo fillable in models e poi cambio string con Model e $id con $variabile
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // dd($request->all(),$id);
+        $data=$request->all();
+        // $comic=Comic::findOrFail($id);
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
