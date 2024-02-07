@@ -16,7 +16,10 @@
         </p>
         <p>
             Series: {{ $comic->series }}
-        </p>                           
+        </p>  
+        <a href="{{ route('comics.edit', $comic->id) }}">
+            <button class="btn btn-primary"> Edit comic book</button>
+        </a>
     </div>
 </article>
 @endsection
