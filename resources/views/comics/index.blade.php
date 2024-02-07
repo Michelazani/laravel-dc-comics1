@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main-content')
-<main>
+<main id="comics">
     <section id="comics " class="d-flex flex-column justify-content-center align-items-center">
         <button class=" upper-button"> current series </button>
         <div class="comics d-flex flex-wrap justify-content-space-evenly align-items-stretch">

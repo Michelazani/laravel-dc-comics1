@@ -17,10 +17,10 @@ use App\Http\Controllers\Guest\ComicController as GuestComicController;
 //     return view('pages.home');
 // });
 
-Route::get('/comics', function () {
+Route::get('/', function () {
     $comics = config('db.comics');
-    return view('comics.index', compact('comics') );
-});
+    return view('pages.comics', compact('comics') );
+}) ->name('pages.comics');
 
 Route::get('/comics', [GuestComicController::class, 'index']) -> name('comics.index');
 Route::post('/comics', [GuestComicController::class, 'store'])->name('comics.store');

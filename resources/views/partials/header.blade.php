@@ -1,6 +1,6 @@
 <header class="d-flex justify-content-between align-items-center">
         <section class="logo">
-            <img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt=" dc logo">
+            <a href="{{ route('pages.comics') }}"> <img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt=" dc logo"> </a>
         </section>
         <section class="nav ">
             <ul class="d-flex flex-row">
@@ -8,7 +8,10 @@
                     <a href="">characters</a>
                 </li>
                 <li>
-                    <a href="">comics</a>
+                    <a href=" {{ route('comics.index') }}">comics</a>
+                </li>
+                <li>
+                    <a href=" {{ route('comics.create') }}">create comic</a>
                 </li>
                 <li>
                     <a href="">movies</a>
